@@ -1,0 +1,11 @@
+Model Information:
+* title:	Brisbane City Scania L94UB Bus
+* source:	https://sketchfab.com/3d-models/brisbane-city-scania-l94ub-bus-8f41b49ba5344d3a8391a4c0d144d8e8
+* author:	Jotrain (https://sketchfab.com/Jotrain)
+
+Model License:
+* license type:	CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)
+* requirements:	Author must be credited. No commercial use.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Brisbane City Scania L94UB Bus" (https://sketchfab.com/3d-models/brisbane-city-scania-l94ub-bus-8f41b49ba5344d3a8391a4c0d144d8e8) by Jotrain (https://sketchfab.com/Jotrain) licensed under CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)

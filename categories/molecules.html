@@ -1,0 +1,46 @@
+<!doctype HTML>
+<html>
+
+<head>
+    <title>Molecules</title>
+    <meta charset="utf-8">
+</head>
+<script src="../Assets/Scripts/scene.js"></script>
+<script src="../Assets/Scripts/augmented.js"></script>
+
+<body style='margin : 0px; overflow: hidden;'>
+
+    <a-scene embedded arjs='sourceType: webcam;'>
+
+        <a-assets>
+            <a-asset-item id="dna" src="../Assets/Models/molecules/dna/scene.gltf">
+            <a-asset-item id="benzene" src="../Assets/Models/molecules/benzene.glb">
+            <a-asset-item id="h2o" src="../Assets/Models/molecules/H2O.glb">
+        </a-assets>
+
+
+        <!-- Using the asset management system. -->
+
+        <!-- DNA -->
+        <a-marker preset='custom' type='pattern' url='../Assets/Markers/molecules/dna.patt'>
+            <a-entity gltf-model="#dna" position="0 0 0" scale="2 2 2" rotation="0 0 0"></a-entity>
+        </a-marker>
+
+        <!-- Benzene -->
+        <a-marker preset='custom' type='pattern' url='../Assets/Markers/molecules/C6H6.patt'>
+            <a-entity gltf-model="#benzene" position="0 0 0" scale="2 2 2" rotation="0 0 0"></a-entity>
+        </a-marker>
+
+        <!-- H2O -->
+        <a-marker preset='custom' type='pattern' url='../Assets/Markers/molecules/H2O.patt'>
+          <a-entity gltf-model="#h2o" position="0 0 0" scale="2 2 2" rotation="0 0 0"></a-entity>
+      </a-marker>
+
+
+
+
+        <a-entity camera></a-entity>
+    </a-scene>
+</body>
+
+</html>

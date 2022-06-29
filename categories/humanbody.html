@@ -1,0 +1,68 @@
+<!doctype HTML>
+<html>
+
+<head>
+    <title>Human Body</title>
+    <meta charset="utf-8">
+</head>
+<script src="../Assets/Scripts/scene.js"></script>
+<script src="../Assets/Scripts/augmented.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
+
+<body style='margin : 0px; overflow: hidden;'>
+
+    <a-scene embedded arjs='sourceType: webcam;'>
+
+        <a-assets>
+            <a-asset-item id="brain" src="../Assets/Models/body/brain.glb">
+            <a-asset-item id="heart" src="../Assets/Models/body/heart.glb">
+            <a-asset-item id="skeleton" src="../Assets/Models/body/skeleton/scene.gltf">
+        </a-assets>
+
+
+        <!-- Using the asset management system. -->
+
+        <!-- Brain -->
+        <a-marker preset='custom' type='pattern' url='../Assets/Markers/body/brain.patt'>
+            <a-entity gltf-model="#brain" position="0 0 0" scale="2 2 2" rotation="0 0 0"></a-entity>
+        </a-marker>
+
+        <!-- Heart -->
+        <a-marker preset='custom' type='pattern' id = "heart-marker" url='../Assets/Markers/body/heart.patt'>
+            <a-entity gltf-model="#heart" position="0 0 0" scale="2 2 2" rotation="0 0 0"></a-entity>
+        </a-marker>
+
+        <!-- Skeleton -->
+        <a-marker preset='custom' type='pattern' url='../Assets/Markers/body/skeleton.patt'>
+            <a-entity gltf-model="#skeleton" position="0 0 0" scale="2 2 2" rotation="0 0 0"></a-entity>
+        </a-marker>
+
+        <a-entity camera></a-entity>
+    </a-scene>
+
+    <script>
+		var heart = new Howl({
+			src: ['../Assets/audio/body_audio/heartbeat.mp3']
+		});
+
+		// heart.play();
+		// heart.mute(true);
+
+        window.onload = function () {
+			const heartMarker = document.getElementById('heart-marker');
+
+			heartMarker.addEventListener('markerFound', function() {
+				// heart.mute(false);
+                heart.play();
+			});
+			heartMarker.addEventListener('markerLost', function() {
+				// heart.mute(true);
+                heart.stop();
+			});
+		}
+
+	</script>
+
+</body>
+
+</html>

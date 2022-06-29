@@ -1,0 +1,103 @@
+<!doctype HTML>
+<html>
+
+<head>
+    <title>Animals</title>
+    <meta charset="utf-8">
+</head>
+<script src="../Assets/Scripts/scene.js"></script>
+<script src="../Assets/Scripts/augmented.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
+
+<body style='margin : 0px; overflow: hidden;'>
+
+    <a-scene embedded arjs='sourceType: webcam;'>
+
+        <a-assets>
+            <a-asset-item id="cat" src="../Assets/Models/animals/cat/scene.gltf">
+            <a-asset-item id="dog" src="../Assets/Models/animals/dog/scene.gltf">
+            <a-asset-item id="lion" src="../Assets/Models/animals/lion/scene.gltf">
+        </a-assets>
+
+
+        <!-- Using the asset management system. -->
+
+        <!-- Cat -->
+        <a-marker preset='custom' type='pattern' id = "cat-marker" url='../Assets/Markers/animals/cat.patt'>
+            <a-entity gltf-model="#cat" position="0 0 0" scale="0.2 0.2 0.2" rotation="0 0 0"></a-entity>
+        </a-marker>
+
+        <!-- Dog -->
+        <a-marker preset='custom' type='pattern' id = "dog-marker" url='../Assets/Markers/animals/dog.patt'>
+            <a-entity gltf-model="#dog" position="0 0 0" scale="2 2 2" rotation="0 0 0"></a-entity>
+        </a-marker>
+
+        <!-- Lion -->
+        <a-marker preset='custom' type='pattern' id = "lion-marker" url='../Assets/Markers/animals/lion.patt'>
+            <a-entity gltf-model="#lion" position="0 0 0" scale="2 2 2" rotation="0 0 0"></a-entity>
+        </a-marker>
+
+        <a-entity camera></a-entity>
+    </a-scene>
+
+
+    <script>
+		var cat = new Howl({
+			src: ['../Assets/audio/animals_audio/cat.mp3']
+		});
+		var dog = new Howl({
+			src: ['../Assets/audio/animals_audio/dog.wav']
+		});
+		var lion = new Howl({
+			src: ['../Assets/audio/animals_audio/lion.wav']
+		});
+
+		var audioMap = {
+			"dog-marker": dog,
+			"cat-marker": cat,
+			"lion-marker": lion,
+		}
+
+		// cat.play();
+		// cat.mute(true);
+		// dog.play();
+		// dog.mute(true);
+		// lion.play();
+        // lion.mute(true);
+
+
+        window.onload = function () {
+			const catMarker = document.getElementById('cat-marker');
+			const dogMarker = document.getElementById('dog-marker'); 
+			const lionMarker = document.getElementById('lion-marker');
+
+			catMarker.addEventListener('markerFound', function() {
+				// cat.mute(false);
+                cat.play();
+			});
+			// catMarker.addEventListener('markerLost', function() {
+			// 	// cat.mute(true);
+			// });
+			dogMarker.addEventListener('markerFound', function() {
+				// dog.mute(false);
+                dog.play();
+				// console.log("Marker Found");
+			});
+			// dogMarker.addEventListener('markerLost', function() {
+			// 	dog.mute(true);
+			// 	// console.log("Marker Lost");
+			// });
+			lionMarker.addEventListener('markerFound', function() {
+			    // lion.mute(false);
+                lion.play();
+			});
+			// lionMarker.addEventListener('markerLost', function() {
+			//     lion.mute(true);
+			// });
+		}
+
+	</script>
+
+</body>
+
+</html>

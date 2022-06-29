@@ -1,0 +1,11 @@
+Model Information:
+* title:	Stadium+3d Model animation
+* source:	https://sketchfab.com/3d-models/stadium3d-model-animation-a3806cf0f8014923885b806517c4888f
+* author:	madha (https://sketchfab.com/madha)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Stadium+3d Model animation" (https://sketchfab.com/3d-models/stadium3d-model-animation-a3806cf0f8014923885b806517c4888f) by madha (https://sketchfab.com/madha) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

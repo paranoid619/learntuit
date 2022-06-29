@@ -1,0 +1,43 @@
+<!doctype HTML>
+<html>
+<head>
+  <title>Alphabets</title>
+  <meta charset="utf-8">
+</head>
+<script src="../Assets/Scripts/scene.js"></script>
+<script src="../Assets/Scripts/augmented.js"></script>
+  <body style='margin : 0px; overflow: hidden;'>
+
+    <a-scene embedded arjs='sourceType: webcam;'>
+
+    <a-assets>
+    <a-asset-item id="apple" src="../Assets/Models/alphabets/apple/scene.gltf">
+    <a-asset-item id="pumpkin" src="../Assets/Models/alphabets/pumpkin.glb">
+    <a-asset-item id="cat" src="../Assets/Models/alphabets/cat/scene.gltf">
+  </a-assets>
+
+
+  <!-- Using the asset management system. -->
+  
+    <!-- Apple -->
+    <a-marker preset='custom' type='pattern' url='../Assets/Markers/alphabets/a.patt'>
+        <a-gltf-model src="#apple" scale="4 4 4" ></a-gltf-model>
+    </a-marker>
+
+    <!-- Cat -->
+    <a-marker preset='custom' type='pattern' url='../Assets/Markers/alphabets/c.patt'>
+      <a-entity animation-mixer gltf-model="#cat" position="0 0 0" scale="2 2 2" rotation="0 0 0"  ></a-entity>
+    </a-marker>
+
+    <!-- Pumpkin -->
+    <a-marker preset='custom' type='pattern' url='../Assets/Markers/alphabets/p.patt'>
+      <a-entity animation-mixer gltf-model="#pumpkin" position="0 0 0" scale="2 2 2" rotation="0 0 0"  ></a-entity>
+    </a-marker>
+
+
+    
+
+    <a-entity camera></a-entity>
+    </a-scene>
+  </body>
+</html>

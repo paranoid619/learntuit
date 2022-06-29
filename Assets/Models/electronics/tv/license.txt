@@ -1,0 +1,11 @@
+Model Information:
+* title:	TV & Glass Table Sketchfab
+* source:	https://sketchfab.com/3d-models/tv-glass-table-sketchfab-40ca38263bcd413381294aa791296719
+* author:	James Rogers (https://sketchfab.com/JamesRogers)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "TV & Glass Table Sketchfab" (https://sketchfab.com/3d-models/tv-glass-table-sketchfab-40ca38263bcd413381294aa791296719) by James Rogers (https://sketchfab.com/JamesRogers) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

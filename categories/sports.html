@@ -1,0 +1,43 @@
+<!doctype HTML>
+<html>
+
+<head>
+    <title>Sports</title>
+    <meta charset="utf-8">
+</head>
+<script src="../Assets/Scripts/scene.js"></script>
+<script src="../Assets/Scripts/augmented.js"></script>
+
+<body style='margin : 0px; overflow: hidden;'>
+
+    <a-scene embedded arjs='sourceType: webcam;'>
+
+        <a-assets>
+            <a-asset-item id="cricket" src="../Assets/Models/sports/cricket/scene.gltf">
+            <a-asset-item id="football" src="../Assets/Models/sports/football/scene.gltf">
+            <a-asset-item id="tabletennis" src="../Assets/Models/sports/tabletennis/scene.gltf">
+        </a-assets>
+
+
+        <!-- Using the asset management system. -->
+
+        <!-- Cricket -->
+        <a-marker preset='custom' type='pattern' url='../Assets/Markers/sports/cricket.patt'>
+            <a-entity gltf-model="#cricket" position="0 0 0" scale="0.01 0.01 0.01" rotation="0 0 0"></a-entity>
+        </a-marker>
+
+        <!-- Football -->
+        <a-marker preset='custom' type='pattern' url='../Assets/Markers/sports/football.patt'>
+            <a-entity gltf-model="#football" position="0 0 0" scale="0.001 0.001 0.001" rotation="0 0 0"></a-entity>
+        </a-marker>
+
+        <!-- Table Tennis -->
+        <a-marker preset='custom' type='pattern' url='../Assets/Markers/sports/tt.patt'>
+            <a-entity gltf-model="#tabletennis" position="0 0 0" scale="0.2 0.2 0.2" rotation="0 0 0"></a-entity>
+        </a-marker>
+
+        <a-entity camera></a-entity>
+    </a-scene>
+</body>
+
+</html>

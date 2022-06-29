@@ -1,0 +1,115 @@
+<!doctype HTML>
+<html>
+
+<head>
+    <title>Instruments</title>
+    <meta charset="utf-8">
+</head>
+<script src="../Assets/Scripts/scene.js"></script>
+<script src="../Assets/Scripts/augmented.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
+
+<body style='margin : 0px; overflow: hidden;'>
+
+    <a-scene embedded arjs='sourceType: webcam;'>
+
+        <a-assets>
+            <a-asset-item id="guitar" src="../Assets/Models/instruments/acoustic_guitar/scene.gltf">
+            <a-asset-item id="drum" src="../Assets/Models/instruments/drum_set/scene.gltf">
+            <a-asset-item id="violin" src="../Assets/Models/instruments/stradivari_violin/scene.gltf">
+        </a-assets>
+
+
+        <!-- Using the asset management system. -->
+
+        <!-- Guitar -->
+        <a-marker preset='custom' type='pattern' id="guitar-marker"  url='../Assets/Markers/instruments/guitar.patt'>
+            <a-entity gltf-model="#guitar" position="0 0 0" scale="2 2 2" rotation="0 0 0"></a-entity>
+        </a-marker>
+
+        <!-- Drum -->
+        <a-marker preset='custom' type='pattern' id="drums-marker" url='../Assets/Markers/instruments/drum.patt'>
+            <a-entity gltf-model="#drum" position="0 0 0" scale="2 2 2" rotation="0 0 0"></a-entity>
+        </a-marker>
+
+        <!-- Violin -->
+        <a-marker preset='custom' type='pattern' id="violin-marker" url='../Assets/Markers/instruments/violin.patt'>
+            <a-entity gltf-model="#violin" position="0 0 0" scale="0.2 0.2 0.2" rotation="0 0 0"></a-entity>
+        </a-marker>
+
+        <a-entity camera></a-entity>
+    </a-scene>
+
+    <script>
+		var drums = new Howl({
+			src: ['../Assets/audio/instruments_audio/drums.mp3']
+		});
+		var guitar = new Howl({
+			src: ['../Assets/audio/instruments_audio/guitar.mp3']
+		});
+		var violin = new Howl({
+			src: ['../Assets/audio/instruments_audio/violin.mp3']
+		});
+
+		// var audioMap = {
+		// 	"guitar-marker": guitar,
+		// 	"drums-marker": drums,
+		// 	"violin-marker": violin,
+		// }
+
+		drums.play();
+		drums.mute(true);
+		guitar.play();
+		guitar.mute(true);
+		violin.play();
+        violin.mute(true);
+
+		// window.onload = function () {
+		// 	var arMarkers = document.getElementsByClassName("ar-marker");
+        //     console.log("onload function 1");
+		// 	Array.from(arMarkers).forEach(function(arMarker) {
+		// 		arMarker.addEventListener('markerFound', function(event) {
+		// 			console.log(event.target.id);
+		// 			audioMap[event.target.id].mute(false);
+        //             console.log("onload function 2");
+		// 		});
+        //         console.log("onload function 3");
+		// 		arMarker.addEventListener('markerLost', function(event) {
+		// 			console.log(event.target.id);
+		// 			audioMap[event.target.id].mute(true);
+		// 		});
+		//     });
+		// }
+
+        window.onload = function () {
+			const drumsMarker = document.getElementById('drums-marker');
+			const guitarMarker = document.getElementById('guitar-marker'); 
+			const violinMarker = document.getElementById('violin-marker');
+
+			drumsMarker.addEventListener('markerFound', function() {
+				drums.mute(false);
+			});
+			drumsMarker.addEventListener('markerLost', function() {
+				drums.mute(true);
+			});
+			guitarMarker.addEventListener('markerFound', function() {
+				guitar.mute(false);
+				// console.log("Marker Found");
+			});
+			guitarMarker.addEventListener('markerLost', function() {
+				guitar.mute(true);
+				// console.log("Marker Lost");
+			});
+			violinMarker.addEventListener('markerFound', function() {
+				piano.mute(false);
+			});
+			violinMarker.addEventListener('markerLost', function() {
+				piano.mute(true);
+			});
+		}
+
+	</script>
+
+</body>
+
+</html>

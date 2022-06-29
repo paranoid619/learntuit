@@ -1,0 +1,11 @@
+Model Information:
+* title:	Table tennis animation (Ping pong)
+* source:	https://sketchfab.com/3d-models/table-tennis-animation-ping-pong-cb651df959b04b6cae38d05682601580
+* author:	mrfsandor (https://sketchfab.com/mrfsandor)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Table tennis animation (Ping pong)" (https://sketchfab.com/3d-models/table-tennis-animation-ping-pong-cb651df959b04b6cae38d05682601580) by mrfsandor (https://sketchfab.com/mrfsandor) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
